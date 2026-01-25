@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Get the Vue CDN link to use their objects-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--Preview the message coming from the script created with Vue-->
+        <h1>
+            {{message}}
+        </h1>
+        <!--Calling the event method of clickMe-->
+        <button @click="clickMe">Click Me</button>
+    </div>
+
+    <script>
+        //currently we are using Options API 
+        const app = Vue.createApp({
+            data(){
+                return{
+                    message: 'Hello From Vue!'
+                };
+            },
+            methods: {
+                clickMe(){
+                    console.log('Button clicked');
+                    this.message = 'Updated Messsage';
+                },
+            },
+        });
+        
+        app.mount('#app');
+    </script>
+</body>
+</html>
