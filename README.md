@@ -27,3 +27,15 @@ Within the `<template>` this is where HTML will be rendered, and you can also in
 - Vue CLI - Command line interface for setting up Vue projects. **No longer recommended**
 - Create Vue - Uses Vite, which includes features like hot-reloading, out of the box TypeScript and an ecosystem of plugins.
 - Nuxt.js & Gridsome - SSR & SSG frameworks that use Vue
+
+
+## Lifecycle Methods
+- onBeforeMount - called before mounting begins
+- onMounted - called when component is mounted
+- onBeforeUpdate - called when reactive data changes and before re-render
+- onUpdated - called after re-render
+- onBeforeUnmount - called before the Vue instance is destroyed
+- onActivated - called when a kept-alive component is activated
+- onDeactivated - called when a kept-alive component is deactivated
+- onErrorCaptured - called when an error is captured from a child component
+
