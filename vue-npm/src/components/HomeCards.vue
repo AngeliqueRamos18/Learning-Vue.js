@@ -20,7 +20,8 @@
               Browse Jobs
             </a>
           </Card>
-          <Card>
+          <!-- Can also have a prop defined for setting specific class to be dynamic-->
+          <Card bg="bg-green-100">
             <h2 class="text-2xl font-bold">For Employers</h2>
             <p class="mt-2 mb-4">
               List your job to find the perfect developer for the role
