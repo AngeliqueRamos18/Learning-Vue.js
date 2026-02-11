@@ -48,7 +48,7 @@ const toggleFullDescription = () => {
 
         <div class="flex flex-col justify-between mb-4 lg:flex-row">
         <div class="mb-3 text-orange-700">
-            <i class="text-lg fa-solid fa-location-dot"></i>
+            <i class="text-orange-700 pi pi-map-marker"></i>
             {{ job.location }}
         </div>
         <!-- This is the part for route that depends on the id where to navigate you-->
