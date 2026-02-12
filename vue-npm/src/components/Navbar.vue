@@ -5,33 +5,33 @@
 
 <template>
  <nav class="bg-green-700 border-b border-green-500">
-      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="flex h-20 items-center justify-between">
+      <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
           <div
-            class="flex flex-1 items-center justify-center md:items-stretch md:justify-start"
+            class="flex items-center justify-center flex-1 md:items-stretch md:justify-start"
           >
             <!-- Logo -->
-            <a class="flex flex-shrink-0 items-center mr-4" href="index.html">
-              <img class="h-10 w-auto" v-bind:src="logo" alt="Vue Jobs" />
-              <span class="hidden md:block text-white text-2xl font-bold ml-2"
+            <a class="flex items-center flex-shrink-0 mr-4" href="index.html">
+              <img class="w-auto h-10" v-bind:src="logo" alt="Vue Jobs" />
+              <span class="hidden ml-2 text-2xl font-bold text-white md:block"
                 >Vue Jobs</span
               >
             </a>
             <div class="md:ml-auto">
               <div class="flex space-x-2">
                 <a
-                  href="index.html"
-                  class="text-white bg-green-900 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                  href="/"
+                  class="px-3 py-2 text-white bg-green-900 rounded-md hover:bg-gray-900 hover:text-white"
                   >Home</a
                 >
                 <a
-                  href="jobs.html"
-                  class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
+                  href="/jobs"
+                  class="px-3 py-2 text-white rounded-md hover:bg-green-900 hover:text-white"
                   >Jobs</a
                 >
                 <a
-                  href="add-job.html"
-                  class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
+                  href="/jobs/add"
+                  class="px-3 py-2 text-white rounded-md hover:bg-green-900 hover:text-white"
                   >Add Job</a
                 >
               </div>
