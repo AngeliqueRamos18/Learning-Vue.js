@@ -1,6 +1,7 @@
 <script setup>
 //The @ means we're referring to the file sources
-  import logo from '@/assets/img/logo.png'
+import { RouterLink } from 'vue-router';
+import logo from '@/assets/img/logo.png'
 </script>
 
 <template>
@@ -11,29 +12,30 @@
             class="flex items-center justify-center flex-1 md:items-stretch md:justify-start"
           >
             <!-- Logo -->
-            <a class="flex items-center flex-shrink-0 mr-4" href="index.html">
+            <RouterLink class="flex items-center flex-shrink-0 mr-4" to="/">
               <img class="w-auto h-10" v-bind:src="logo" alt="Vue Jobs" />
               <span class="hidden ml-2 text-2xl font-bold text-white md:block"
                 >Vue Jobs</span
               >
-            </a>
+            </RouterLink>
             <div class="md:ml-auto">
               <div class="flex space-x-2">
-                <a
-                  href="/"
+                <!-- Difference ng RouterLink compared to anchor tag is the smooth navigation between differenet pages instead of refreshing on each click -->
+                <RouterLink
+                  to="/"
                   class="px-3 py-2 text-white bg-green-900 rounded-md hover:bg-gray-900 hover:text-white"
-                  >Home</a
-                >
-                <a
-                  href="/jobs"
+                  >Home
+                </RouterLink>
+                <RouterLink
+                  to="/jobs"
                   class="px-3 py-2 text-white rounded-md hover:bg-green-900 hover:text-white"
-                  >Jobs</a
-                >
-                <a
-                  href="/jobs/add"
+                  >Jobs
+                </RouterLink>
+                <RouterLink
+                  to="/jobs/add"
                   class="px-3 py-2 text-white rounded-md hover:bg-green-900 hover:text-white"
-                  >Add Job</a
-                >
+                  >Add Job
+                </RouterLink>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 <script setup>
 import { defineProps, ref, computed} from 'vue';
-
+import { RouterLink } from 'vue-router';
 //this will be used as defineprop from JobListings.vue which takes in the value of the json data
 const props = defineProps({
     job: Object
@@ -52,12 +52,12 @@ const toggleFullDescription = () => {
             {{ job.location }}
         </div>
         <!-- This is the part for route that depends on the id where to navigate you-->
-        <a
-            :href="'/job/' + job.id"
+        <RouterLink
+            :to="'/job/' + job.id"
             class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
         >
             Read More
-        </a>
+        </RouterLink>
         </div>
     </div>
 </div>

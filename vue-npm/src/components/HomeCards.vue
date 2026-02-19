@@ -1,24 +1,25 @@
 <script setup>
+    import { RouterLink } from 'vue-router';
     import Card from '@/components/Card.vue';
 </script>
 
 <template>
     <!-- Copied from Developers and Employes from index.html from _them_files-->
     <section class="py-4">
-      <div class="container-xl lg:container m-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
+      <div class="m-auto container-xl lg:container">
+        <div class="grid grid-cols-1 gap-4 p-4 rounded-lg md:grid-cols-2">
         <!-- We can also do our own scope tag like <Card> based on importing the specific block and it will apply the designs-->
           <Card>
             <h2 class="text-2xl font-bold">For Developers</h2>
             <p class="mt-2 mb-4">
               Browse our Vue jobs and start your career today
             </p>
-            <a
-              href="jobs.html"
-              class="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
+            <RouterLink
+              href="/jobs"
+              class="inline-block px-4 py-2 text-white bg-black rounded-lg hover:bg-gray-700"
             >
               Browse Jobs
-            </a>
+            </RouterLink>
           </Card>
           <!-- Can also have a prop defined for setting specific class to be dynamic-->
           <Card bg="bg-green-100">
@@ -26,12 +27,12 @@
             <p class="mt-2 mb-4">
               List your job to find the perfect developer for the role
             </p>
-            <a
-              href="add-job.html"
-              class="inline-block bg-green-500 text-white rounded-lg px-4 py-2 hover:bg-green-600"
+            <RouterLink
+              to="/jobs/add"
+              class="inline-block px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600"
             >
               Add Job
-            </a>
+            </RouterLink>
            </Card>
         </div>
       </div>
