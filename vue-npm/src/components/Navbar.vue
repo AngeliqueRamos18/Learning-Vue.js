@@ -1,7 +1,12 @@
 <script setup>
 //The @ means we're referring to the file sources
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
 import logo from '@/assets/img/logo.png'
+
+const isActiveLink = (routePath) => {
+  const route = useRoute();
+  return route.path === routePath;
+}
 </script>
 
 <template>
@@ -23,17 +28,17 @@ import logo from '@/assets/img/logo.png'
                 <!-- Difference ng RouterLink compared to anchor tag is the smooth navigation between differenet pages instead of refreshing on each click -->
                 <RouterLink
                   to="/"
-                  class="px-3 py-2 text-white bg-green-900 rounded-md hover:bg-gray-900 hover:text-white"
+                  :class="[isActiveLink('/') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white','text-white', 'px-3', 'py-2','rounded-md']"
                   >Home
                 </RouterLink>
                 <RouterLink
                   to="/jobs"
-                  class="px-3 py-2 text-white rounded-md hover:bg-green-900 hover:text-white"
+                  :class="[isActiveLink('/jobs') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white','text-white', 'px-3', 'py-2','rounded-md']"
                   >Jobs
                 </RouterLink>
                 <RouterLink
                   to="/jobs/add"
-                  class="px-3 py-2 text-white rounded-md hover:bg-green-900 hover:text-white"
+                  :class="[isActiveLink('/jobs/add') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white','text-white', 'px-3', 'py-2','rounded-md']"
                   >Add Job
                 </RouterLink>
               </div>
