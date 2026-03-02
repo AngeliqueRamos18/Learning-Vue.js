@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref, computed} from 'vue';
+import { ref, computed} from 'vue';
 import { RouterLink } from 'vue-router';
 //this will be used as defineprop from JobListings.vue which takes in the value of the json data
 const props = defineProps({

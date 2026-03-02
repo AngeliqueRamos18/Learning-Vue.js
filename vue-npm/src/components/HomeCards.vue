@@ -15,7 +15,7 @@
               Browse our Vue jobs and start your career today
             </p>
             <RouterLink
-              href="/jobs"
+              to="/jobs"
               class="inline-block px-4 py-2 text-white bg-black rounded-lg hover:bg-gray-700"
             >
               Browse Jobs

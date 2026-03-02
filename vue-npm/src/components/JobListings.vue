@@ -1,17 +1,14 @@
 <script setup>
-// Import data with json 
-import jobData from '@/jobs.json'
+
 import { RouterLink } from 'vue-router';
 
 //In order to make this data reactive since we are importing or deleting and such make a ref to it
-import { ref, defineProps } from 'vue';
-const jobs = ref(jobData);
-
-//Let's try to see the value, you can see this from console log in browser
-console.log(jobs.value);
+import { ref, onMounted } from 'vue';
 
 //Import the card from JobListing.vue
 import JobListing from './JobListing.vue';
+
+import axios from 'axios';
 
 // This time is to make a limit based on the defined props (limit the showing of jobs)
 defineProps({
@@ -19,6 +16,17 @@ defineProps({
     showButton: {
         type: Boolean,
         default: false
+    }
+});
+
+const jobs = ref([]);
+
+onMounted(async () => {
+    try {
+        const response = await axios.get('http://localhost:8000/jobs');
+        jobs.value = response.data;
+    } catch (error) {
+        console.error('Error fetching jobs', error);
     }
 });
 </script>
