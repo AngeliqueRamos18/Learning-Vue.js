@@ -59,3 +59,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 ```
 
 Create another folder inside `src` called `views`.
+
+## ref vs reactive
+
+- **reactive()** only takes objects. It does not take primitives like strings, numbers and booleans. It uses `ref()` under the hood.
+- **ref** can take objects or primitives
+- **ref()** has a `.value` property for reassigning, `reactive()` doesn't use it and can't be reassigned

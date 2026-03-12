@@ -3,12 +3,15 @@
 import { RouterLink } from 'vue-router';
 
 //In order to make this data reactive since we are importing or deleting and such make a ref to it
-import { ref, onMounted } from 'vue';
+import { reactive, onMounted } from 'vue';
 
 //Import the card from JobListing.vue
 import JobListing from './JobListing.vue';
 
 import axios from 'axios';
+
+//Import spinner
+import { PulseLoader } from 'vue-spinner';
 
 // This time is to make a limit based on the defined props (limit the showing of jobs)
 defineProps({
@@ -19,14 +22,20 @@ defineProps({
     }
 });
 
-const jobs = ref([]);
+const state = reactive({
+    jobs: [],
+    isLoading: true
+});
 
 onMounted(async () => {
     try {
         const response = await axios.get('http://localhost:8000/jobs');
-        jobs.value = response.data;
+        state.jobs = response.data;
     } catch (error) {
         console.error('Error fetching jobs', error);
+    } finally {
+        // This is when the processing is done either way ran successfully or failed
+        state.isLoading = false;
     }
 });
 </script>
@@ -41,9 +50,18 @@ onMounted(async () => {
             <h2 class="mb-6 text-3xl font-bold text-center text-green-500">
                 Browse Jobs
             </h2>
-            <div class="grid grid-cols-1 gap-6 md:grip-cols-3">
+            <!-- Show loading spinner while loading is true-->
+            <div v-if="state.isLoading" class="py-6 text-center text-gray-500">
+            <PulseLoader class="flex justify-center" />
+            </div>
+             <!-- Show job listing when done loading-->
+            
+            <div v-else class="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <!-- Time to import the data with json on the design -->
-                <JobListing div v-for="job in jobs.slice(0, limit || jobs.length)" :key="job.id" :job="job"/>
+                <JobListing
+                    v-for="job in state.jobs.slice(0, limit || state.jobs.length)" 
+                    :key="job.id" 
+                    :job="job"/>
             </div>
         </div>
     </section>
