@@ -4,7 +4,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
-import path from 'node:path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -12,18 +11,6 @@ export default defineConfig({
     vueDevTools(),
     tailwindcss(),
   ],
-
-  // This part is for proxying so that once the server has been deployed, instead of showing localhost:8000 it will show /api
-  server: {
-    port: 3000,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8000',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      }
-    }
-  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

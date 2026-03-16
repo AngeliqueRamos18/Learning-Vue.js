@@ -4,7 +4,6 @@ import { reactive, onMounted } from 'vue';
 import { useRoute, RouterLink } from 'vue-router';
 import axios from 'axios';
 
-import BackButton from '@/components/BackButton.vue';
 const route = useRoute();
 
 // .id is based from the index.js on this code path: '/jobs/:id(\\d+)', if you have another name it should be the same at the end of the variable name
@@ -17,8 +16,7 @@ const state = reactive({
 
 onMounted(async () => {
     try {
-      // Refer to proxying, in the file vite.config.js
-        const response = await axios.get(`/api/jobs/${jobId}`);
+        const response = await axios.get(`http://localhost:8000/jobs/${jobId}`);
         state.job = response.data;
     } catch (error) {
         console.error('Error fetching job', error);
@@ -30,7 +28,6 @@ onMounted(async () => {
 </script>
 
 <template>
-  <BackButton />
     <section v-if="!state.isLoading && state.job.company" class="bg-green-50">
       <div class="container px-6 py-10 m-auto">
         <div class="grid w-full grid-cols-1 gap-6 md:grid-cols-70/30">
