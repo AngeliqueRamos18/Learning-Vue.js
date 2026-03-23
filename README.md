@@ -72,3 +72,8 @@ To install the spinner (used for displaying loading or processing data)
 ```
 npm i vue-spinner
 ```
+
+## Toast Notification
+```
+npm i vue-toastification@next
+```
