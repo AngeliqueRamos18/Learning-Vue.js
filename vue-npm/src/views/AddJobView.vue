@@ -1,6 +1,8 @@
 <script setup>
 import { reactive } from 'vue';
 import axios from 'axios';
+import { useRouter } from 'vue-router'
+import { useToast } from 'vue-toastification';
 
 // On this part you can set the default input or selected on the form by inserting values here
 const form = reactive({
@@ -16,6 +18,9 @@ const form = reactive({
         contactPhone: '',
     }
 });
+
+const router = useRouter();
+const toast = useToast();
 
 // Since we are going to make request, we will need to add async()
 const handleSubmit = async () => {
@@ -38,10 +43,16 @@ const handleSubmit = async () => {
     // Creating post request instead of get 
     try {
         const response = await axios.post('/api/jobs', newJob);
+        toast.success('Job Added Successfully');
         // @todo - show toast
+
+        console.log(response.data);
+        console.log(response.data.id);
         router.push(`/jobs/${response.data.id}`);
     } catch (error) {
+        console.log('Error fetching job: ', error);
         // @todo - show error toast
+        toast.error('Job Was Not Added');
     }
 };
 </script>

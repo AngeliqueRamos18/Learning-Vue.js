@@ -111,6 +111,76 @@
         "contactEmail": "angel@email.com",
         "contactPhone": "123456"
       }
+    },
+    {
+      "id": "ba6b",
+      "title": "Programmer Test",
+      "type": "Full-Time",
+      "location": "PH",
+      "description": "some desc",
+      "salary": "Under $50K",
+      "company": {
+        "name": "Test Company Name",
+        "description": "",
+        "contactEmail": "angel@email.com",
+        "contactPhone": "123456"
+      }
+    },
+    {
+      "id": "3c16",
+      "title": "Okay programmer",
+      "type": "Part-Time",
+      "location": "PH",
+      "description": "desc",
+      "salary": "$50K - $60K",
+      "company": {
+        "name": "Test Company Name",
+        "description": "some desc",
+        "contactEmail": "angel@email.com",
+        "contactPhone": "123456"
+      }
+    },
+    {
+      "id": "93fa",
+      "title": "intern programmer",
+      "type": "Internship",
+      "location": "PH",
+      "description": "test intern",
+      "salary": "Under $50K",
+      "company": {
+        "name": "Test Company Name",
+        "description": "company desc",
+        "contactEmail": "angel@email.com",
+        "contactPhone": "123456"
+      }
+    },
+    {
+      "id": "eecf",
+      "title": "full time test",
+      "type": "Full-Time",
+      "location": "PH",
+      "description": "desc",
+      "salary": "$60K - $70K",
+      "company": {
+        "name": "Test Company Name",
+        "description": "",
+        "contactEmail": "angel@email.com",
+        "contactPhone": "123456"
+      }
+    },
+    {
+      "id": "b478",
+      "title": "part time coder",
+      "type": "Part-Time",
+      "location": "PH",
+      "description": "wow",
+      "salary": "Under $50K",
+      "company": {
+        "name": "Test Company Name",
+        "description": "company desc",
+        "contactEmail": "angel@email.com",
+        "contactPhone": "123456"
+      }
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

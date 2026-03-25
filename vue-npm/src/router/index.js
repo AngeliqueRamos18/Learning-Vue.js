@@ -19,7 +19,7 @@ const router = createRouter({
             component: JobsView,
         },
         {
-            path: '/jobs/:id(\\d+)',
+            path: '/jobs/:id',
             name: 'job',
             component: JobView,
         },
